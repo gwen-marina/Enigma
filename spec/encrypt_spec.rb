@@ -7,4 +7,8 @@ RSpec.describe Encrypt do
 
   let(:encrypt) { Encrypt.new }
 
+  it "exists" do
+    expect(encrypt).to be_a(Encrypt)  
+  end
+
 end
