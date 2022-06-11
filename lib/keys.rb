@@ -17,7 +17,7 @@ class Keys
     split_2 = numbers[1] + numbers[2]
     split_3 = numbers[2] + numbers[3]
     split_4 = numbers[3] + numbers[4]
-    [split_1, split_2, split_3, split_4]
+    [split_1.to_i, split_2.to_i, split_3.to_i, split_4.to_i]
   end
 
   def offsets
@@ -35,6 +35,12 @@ class Keys
    offset_2 = offset[1]
    offset_3 = offset[2]
    offset_4 = offset[3]
-   [offset_1, offset_2, offset_3, offset_4]
-  end  
+   [offset_1.to_i, offset_2.to_i, offset_3.to_i, offset_4.to_i]
+  end
+
+  def combine_key_offset
+    keys = key_split
+    offset = offsets
+    [keys[0] + offset[0], keys[1] + offset[1], keys[2] + offset[2], keys[3] + offset[3]]
+  end
 end
