@@ -20,4 +20,21 @@ class Keys
     [split_1, split_2, split_3, split_4]
   end
 
+  def offsets
+   # Consider the date formatted as a number, DDMMYY. If the date is August 4, 1995, it would be represented as 040895.
+   # Square the numeric form (1672401025)
+   # Take the last four digits (1025)
+   # 1 offset: The first digit (1)
+   # 2 offset: The second digit (0)
+   # 3 offset: The third digit (2)
+   # 4 offset: The fourth digit (5)
+   date = Time.new.strftime("%d%m%y").to_i
+   last_four_digits = date ** 2
+   offset = last_four_digits.to_s[-4..-1].split("")
+   offset_1 = offset[0]
+   offset_2 = offset[1]
+   offset_3 = offset[2]
+   offset_4 = offset[3]
+   [offset_1, offset_2, offset_3, offset_4]
+  end  
 end
