@@ -21,11 +21,15 @@ RSpec.describe Encrypt do
     expect(encrypt.keys).to be_a(Keys)
   end
 
-  it "can encrypt a message" do
+  it "can build ciphers" do
     expect(encrypt.rotate_shift(1)).to be_a(Hash)
     expect(encrypt.rotate_shift(0)["z"]).to eq("z")
     expect(encrypt.rotate_shift(1)["b"]).to eq("c")
     expect(encrypt.rotate_shift(2)["d"]).to eq("f")
     expect(encrypt.rotate_shift(3)["g"]).to eq("j")
+  end
+
+  it "can encrypt a message" do
+    expect(encrypt.cipher("hello world")).to be_a(String)
   end
 end
