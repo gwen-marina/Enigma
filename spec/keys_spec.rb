@@ -15,5 +15,10 @@ RSpec.describe Keys do
     expect(keys.random_key_generator.count).to eq (5)
   end
 
+  it "can split the keys" do
+    expect(keys.key_split).to be_a(Array)
+    expect(keys.key_split.count).to eq(4)
+  end
+
 
 end
