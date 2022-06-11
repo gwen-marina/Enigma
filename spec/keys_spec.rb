@@ -20,5 +20,8 @@ RSpec.describe Keys do
     expect(keys.key_split.count).to eq(4)
   end
 
-
+  it "can create offsets using the date of transmission" do
+    expect(keys.offsets).to be_a(Array)
+    expect(keys.offsets.count).to eq(4)
+  end
 end
