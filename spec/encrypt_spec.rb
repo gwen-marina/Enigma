@@ -2,7 +2,6 @@ require 'simplecov'
 SimpleCov.start
 require './lib/keys'
 require './lib/encrypt'
-require 'pry'
 
 RSpec.describe Encrypt do
   let(:keys) { Keys.new(12345, "082609") }
@@ -31,5 +30,9 @@ RSpec.describe Encrypt do
 
   it "can encrypt a message" do
     expect(encrypt.cipher("hello world")).to be_a(String)
+  end
+
+  it "can decrypt a message" do
+    expect(encrypt.decipher("hello world")).to be_a(String)  
   end
 end
