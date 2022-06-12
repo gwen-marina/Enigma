@@ -28,11 +28,11 @@ RSpec.describe Encrypt do
     expect(encrypt.rotate_shift(3)["g"]).to eq("j")
   end
 
-  it "can encrypt a message" do
+  it "can encrypt/cipher a message" do
     expect(encrypt.cipher("hello world")).to be_a(String)
   end
 
-  it "can decrypt a message" do
-    expect(encrypt.decipher("hello world")).to be_a(String)  
+  it "can decrypt/decipher a message" do
+    expect(encrypt.decipher("hello world")).to be_a(String)
   end
 end
