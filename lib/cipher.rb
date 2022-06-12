@@ -1,6 +1,6 @@
 require 'keys'
 
-class Encrypt
+class Cipher
   attr_reader :alphabet,
               :keys,
               :shift_one,
