@@ -1,4 +1,3 @@
-require 'pry'
 require 'keys'
 
 class Encrypt
@@ -9,9 +8,9 @@ class Encrypt
               :shift_three,
               :shift_four
 
-  def initialize
+  def initialize(keys = nil)
     @alphabet = ("a".."z").to_a << " "
-    @keys = Keys.new
+    @keys = keys || Keys.new
     @shift_one = rotate_shift(@keys.combine_key_offset[0])
     @shift_two = rotate_shift(@keys.combine_key_offset[1])
     @shift_three = rotate_shift(@keys.combine_key_offset[2])
@@ -26,7 +25,7 @@ class Encrypt
   def cipher(message)
     counter = 0
     encrypted_letters = []
-    message.split("").each do |letter|
+    message.downcase.split("").each do |letter|
       if counter == 0
         encrypted_letters << @shift_one[letter]
         counter += 1
@@ -43,4 +42,5 @@ class Encrypt
     end
     encrypted_letters.join
   end
+
 end
