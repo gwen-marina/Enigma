@@ -8,18 +8,12 @@ class Keys
   end
 
   def random_key_generator
-      #need to fix to include leading zero option
-    rand(10000..99999).to_s.split("").map do |number|
+    rand(00000..99999).to_s.rjust(5, '0').split("").map do |number|
       number
     end
   end
 
   def key_split
-    #1 key = first two digits
-    #2 key = second and third digits
-    #3 key = third and fourth digits
-    #4 key = fourth and fifth digits
-    # numbers = random_key_generator
     split_1 = key[0] + key[1]
     split_2 = key[1] + key[2]
     split_3 = key[2] + key[3]
@@ -28,14 +22,6 @@ class Keys
   end
 
   def offsets
-   # Consider the date formatted as a number, DDMMYY.
-   #If the date is August 4, 1995, it would be represented as 040895.
-   # Square the numeric form (1672401025)
-   # Take the last four digits (1025)
-   # 1 offset: The first digit (1)
-   # 2 offset: The second digit (0)
-   # 3 offset: The third digit (2)
-   # 4 offset: The fourth digit (5)
    last_four_digits = date.to_i ** 2
    offset = last_four_digits.to_s[-4..-1].split("")
    offset_1 = offset[0]

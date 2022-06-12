@@ -1,7 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 require './lib/keys'
-require './lib/encrypt'
+require './lib/cipher'
 require './lib/enigma'
 
 RSpec.describe Enigma do
