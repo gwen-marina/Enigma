@@ -27,20 +27,40 @@ class Encrypt
     encrypted_letters = []
     message.downcase.split("").each do |letter|
       if counter == 0
-        encrypted_letters << @shift_one[letter]
+        encrypted_letters << shift_one[letter]
         counter += 1
       elsif counter == 1
-        encrypted_letters << @shift_two[letter]
+        encrypted_letters << shift_two[letter]
         counter += 1
       elsif counter == 2
-        encrypted_letters << @shift_three[letter]
+        encrypted_letters << shift_three[letter]
         counter += 1
       elsif counter == 3
-        encrypted_letters << @shift_four[letter]
+        encrypted_letters << shift_four[letter]
         counter = 0
       end
     end
     encrypted_letters.join
   end
 
+  def decipher(message)
+    counter = 0
+    unencrypted_letters = []
+    message.downcase.split("").each do |letter|
+      if counter == 0
+        unencrypted_letters << shift_one.index(letter)
+        counter += 1
+      elsif counter == 1
+        unencrypted_letters << shift_two.index(letter)
+        counter += 1
+      elsif counter == 2
+        unencrypted_letters << shift_three.index(letter)
+        counter += 1
+      elsif counter == 3
+        unencrypted_letters << shift_four.index(letter)
+        counter = 0
+      end
+    end
+    unencrypted_letters.join
+  end
 end
