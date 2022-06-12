@@ -1,4 +1,4 @@
-require 'keys'
+require_relative 'keys'
 
 class Cipher
   attr_reader :alphabet,

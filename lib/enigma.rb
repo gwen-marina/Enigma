@@ -1,5 +1,5 @@
-require 'cipher'
-require 'keys'
+require_relative 'cipher'
+require_relative 'keys'
 
 class Enigma
 
