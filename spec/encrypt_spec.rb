@@ -5,7 +5,7 @@ require './lib/encrypt'
 require 'pry'
 
 RSpec.describe Encrypt do
-
+  let(:keys) { Keys.new(12345, "082609") }
   let(:encrypt) { Encrypt.new }
 
   it "exists" do
