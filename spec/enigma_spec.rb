@@ -4,7 +4,7 @@ require './lib/keys'
 require './lib/cipher'
 require './lib/enigma'
 
-RSpec.describe Enigma do
+RSpec.describe Enigma
 
   let(:enigma) { Enigma.new }
 
