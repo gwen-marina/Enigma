@@ -26,6 +26,9 @@ class Cipher
     counter = 0
     encrypted_letters = []
     message.downcase.split("").each do |letter|
+      if !@alphabet.include?(letter)
+        encrypted_letters << letter
+      end
       if counter == 0
         encrypted_letters << shift_one[letter]
         counter += 1
@@ -47,6 +50,9 @@ class Cipher
     counter = 0
     unencrypted_letters = []
     message.downcase.split("").each do |letter|
+      if !@alphabet.include?(letter) 
+        unencrypted_letters << letter
+      end
       if counter == 0
         unencrypted_letters << shift_one.index(letter)
         counter += 1
