@@ -14,7 +14,3 @@ decrypted_text = enigma.decrypt(input, key, date)
 output = File.write(decrypt_to, decrypted_text[:decryption])
 
 puts "Created 'decrypted.txt' with the key #{decrypted_text[:key]} and date #{decrypted_text[:date]}"
-
-
-# If you encounter a character not in the character set, it should be translated as itself. 
-# Using the example above, “hello world!” should be translated as “keder ohulw!”

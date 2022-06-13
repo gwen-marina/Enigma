@@ -29,10 +29,12 @@ RSpec.describe Cipher do
   end
 
   it "can encrypt/cipher a message" do
+    expect(cipher.cipher("hello world!")).to be_a(String)
     expect(cipher.cipher("hello world")).to be_a(String)
   end
 
   it "can decrypt/decipher a message" do
     expect(cipher.decipher("hello world")).to be_a(String)
+    expect(cipher.decipher("hello world!")).to be_a(String)
   end
 end

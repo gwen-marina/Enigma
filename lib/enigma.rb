@@ -16,7 +16,6 @@ class Enigma
   def decrypt(message, key, date = nil)
     keys = Keys.new(key, date)
     create_encrypt = Cipher.new(keys)
-    create_encrypt.decipher(message)
     {
       decryption: create_encrypt.decipher(message),
       key:  keys.key,
