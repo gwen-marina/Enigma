@@ -1,6 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require './lib/keys'
+require_relative '../lib/keys'
 
 RSpec.describe Keys do
 
