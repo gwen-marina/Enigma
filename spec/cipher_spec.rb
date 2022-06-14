@@ -1,7 +1,7 @@
 require 'simplecov'
 SimpleCov.start
-require './lib/keys'
-require './lib/cipher'
+require_relative '../lib/keys'
+require_relative '../lib/cipher'
 
 RSpec.describe Cipher do
   let(:keys) { Keys.new(12345, "082609") }
