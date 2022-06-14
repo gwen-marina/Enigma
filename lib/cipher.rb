@@ -32,7 +32,7 @@ class Cipher
       special_chars(letter)
       @letters << @shifts[@counter][letter]
       @counter += 1
-        @counter = 0 if @counter == 4
+      @counter = 0 if @counter == 4
     end
     @letters.join
   end
@@ -42,7 +42,7 @@ class Cipher
       special_chars(letter)
       @letters << @shifts[@counter].index(letter)
       @counter += 1
-        @counter = 0 if @counter == 4
+      @counter = 0 if @counter == 4
       end
     @letters.join
   end
